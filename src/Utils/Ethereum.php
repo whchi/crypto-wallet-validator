@@ -7,11 +7,6 @@ use kornrunner\Keccak;
 
 class Ethereum
 {
-    /**
-     * @param string $address
-     *
-     * @return bool
-     */
     public static function verifyChecksum(string $address): bool
     {
         try {
@@ -32,11 +27,6 @@ class Ethereum
         return true;
     }
 
-    /**
-     * @param string $address
-     *
-     * @return string
-     */
     public static function toChecksumAddress(string $address): string
     {
         $addressLower = strtolower($address);

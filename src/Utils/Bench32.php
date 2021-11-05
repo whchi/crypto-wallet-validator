@@ -12,11 +12,6 @@ class Bench32
 
     protected static $gen = [0x3b6a57b2, 0x26508e6d, 0x1ea119fa, 0x3d4233dd, 0x2a1462b3];
 
-    /**
-     * @param string $s
-     *
-     * @return array|null
-     */
     public static function decode(string $s): ?array
     {
         if ($s !== strtolower($s) && $s !== strtoupper($s)) {
@@ -49,22 +44,11 @@ class Bench32
         return $data;
     }
 
-    /**
-     * @param string $hrp
-     * @param array $data
-     *
-     * @return bool
-     */
     protected static function verifyChecksum(string $hrp, array $data): bool
     {
         return self::polymod(array_merge(self::hrpExpand($hrp), $data)) === 1;
     }
 
-    /**
-     * @param string $hrp
-     *
-     * @return array
-     */
     protected static function hrpExpand(string $hrp): array
     {
         $ret = [];

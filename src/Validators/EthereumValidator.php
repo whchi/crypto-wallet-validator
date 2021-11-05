@@ -6,11 +6,6 @@ use Xelbot\Crypto\Utils\Ethereum;
 
 class EthereumValidator implements AddressValidatorInterface
 {
-    /**
-     * @param string $value
-     *
-     * @return bool
-     */
     public function validate(string $value): bool
     {
         $matches = [];

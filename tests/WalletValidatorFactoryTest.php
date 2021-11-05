@@ -5,6 +5,7 @@ namespace Tests;
 use PHPUnit\Framework\TestCase;
 use Xelbot\Crypto\Exceptions\CurrencyNotFoundException;
 use Xelbot\Crypto\Validators\EthereumValidator;
+use Xelbot\Crypto\Validators\PolkadotValidator;
 use Xelbot\Crypto\Validators\ZilliqaValidator;
 use Xelbot\Crypto\WalletValidatorFactory;
 
@@ -16,11 +17,12 @@ class WalletValidatorFactoryTest extends TestCase
         $this->assertInstanceOf(EthereumValidator::class, WalletValidatorFactory::create('undefined'));
     }
 
-    public function testEthereumValidator()
+    /**
+     * @dataProvider ethFamily
+     */
+    public function testEthereumValidator(string $currency)
     {
-        $this->assertInstanceOf(EthereumValidator::class, WalletValidatorFactory::create('ETH'));
-        $this->assertInstanceOf(EthereumValidator::class, WalletValidatorFactory::create('eth'));
-        $this->assertInstanceOf(EthereumValidator::class, WalletValidatorFactory::create('Eth'));
+        $this->assertInstanceOf(EthereumValidator::class, WalletValidatorFactory::create($currency));
     }
 
     public function testBankexValidator()
@@ -55,5 +57,21 @@ class WalletValidatorFactoryTest extends TestCase
     {
         $this->assertInstanceOf(ZilliqaValidator::class, WalletValidatorFactory::create('ZIL'));
         $this->assertInstanceOf(ZilliqaValidator::class, WalletValidatorFactory::create('zil'));
+    }
+
+    public function testPolkadotValidator()
+    {
+        $this->assertInstanceOf(PolkadotValidator::class, WalletValidatorFactory::create('DOT'));
+    }
+
+    public function ethFamily(string $currency)
+    {
+        return [
+            ['ETH'],
+            ['UNI'],
+            ['MANA'],
+            ['AAVE'],
+            ['MATIC'],
+        ];
     }
 }
