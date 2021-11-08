@@ -23,4 +23,13 @@ class Crypto
 
         return sodium_bin2hex(sodium_crypto_generichash($hex, '', $len));
     }
+
+    public static function sha256Checksum(string $payload)
+    {
+        $hash = hash('sha256', hash('sha256', $payload));
+
+        return substr($hash, 0, 8);
+//        print_r(self::byteArrayToHexStr($hash));
+//        return substr(hash('sha256', hash('sha256', $payload)), 0, 8);
+    }
 }

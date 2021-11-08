@@ -21,6 +21,7 @@ class WalletValidatorFactory
         'ETZ' => Validators\EthereumValidator::class,
         'ZIL' => Validators\ZilliqaValidator::class,
         'DOT' => Validators\PolkadotValidator::class,
+        'XRP' => Validators\RippleValidator::class,
     ];
 
     /**

@@ -10,6 +10,7 @@ use InvalidArgumentException;
 class Base58
 {
     private static $alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
+    private const CHECKSUM_BYTES = 4;
 
     public static function decode($base58): string
     {
@@ -105,5 +106,9 @@ class Base58
         }
 
         return strrev($return);
+    }
+
+    public static function check()
+    {
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad2d491a76ffaa84382952731e2f5adb",
+    "content-hash": "ac568131baa60d39bd5050b1447a1e72",
     "packages": [
         {
             "name": "kornrunner/keccak",
@@ -54,6 +54,110 @@
                 "source": "https://github.com/kornrunner/php-keccak/tree/1.1.0"
             },
             "time": "2020-12-07T15:40:44+00:00"
+        },
+        {
+            "name": "lessmore92/base-x",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lessmore92/base-x.git",
+                "reference": "2867d29ef4d3850e2d532d2e543f8303cfdcf80e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lessmore92/base-x/zipball/2867d29ef4d3850e2d532d2e543f8303cfdcf80e",
+                "reference": "2867d29ef4d3850e2d532d2e543f8303cfdcf80e",
+                "shasum": ""
+            },
+            "require": {
+                "lessmore92/buffer": "v1.0.0",
+                "php": ">=7"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lessmore92\\BaseX\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lessmore92",
+                    "email": "bahramisoft@gmail.com"
+                }
+            ],
+            "description": "Encode/decode any base",
+            "keywords": [
+                "base",
+                "base-x",
+                "base58",
+                "base62",
+                "bitcoin",
+                "crypto",
+                "crytography",
+                "decode",
+                "decoding",
+                "encode",
+                "encoding",
+                "ethereum",
+                "ripple"
+            ],
+            "support": {
+                "issues": "https://github.com/lessmore92/base-x/issues",
+                "source": "https://github.com/lessmore92/base-x/tree/v1.0.3"
+            },
+            "time": "2021-01-11T12:11:54+00:00"
+        },
+        {
+            "name": "lessmore92/buffer",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lessmore92/Buffer.git",
+                "reference": "735337066decb5fa8769359b40bfb0ccd9086d67"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lessmore92/Buffer/zipball/735337066decb5fa8769359b40bfb0ccd9086d67",
+                "reference": "735337066decb5fa8769359b40bfb0ccd9086d67",
+                "shasum": ""
+            },
+            "require": {
+                "php-64bit": ">=7.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lessmore92\\Buffer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lessmore92",
+                    "email": "bahramisoft@gmail.com"
+                }
+            ],
+            "description": "Toolbox for working with binary and hex data",
+            "keywords": [
+                "Buffer",
+                "binary",
+                "hex",
+                "nodejs-buffer",
+                "php-buffer"
+            ],
+            "support": {
+                "issues": "https://github.com/lessmore92/Buffer/issues",
+                "source": "https://github.com/lessmore92/Buffer/tree/v1.0.0"
+            },
+            "time": "2021-01-11T11:55:50+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -4204,12 +4308,15 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "lessmore92/base-x": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.1.0|^8",
-        "ext-bcmath": "*"
+        "ext-bcmath": "*",
+        "ext-sodium": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
